@@ -1,0 +1,61 @@
+epa_id,anio,marca,modelo_epa,modelo_mx_referencia,tipo_coincidencia,segmento,clase_epa,combustible,transmision,cilindrada_l,mpg_combinado,rend_ciudad_km_l,rend_carretera_km_l,rend_combinado_km_l
+43690,2021,Ford,Transit T150 Wagon 2WD FFV,Ford Transit,exacto,Van,"Vans, Passenger Type",Gasoline or E85,Automatic (S10),3.5,16.0,6.38,8.08,6.8
+43691,2021,Ford,Transit T150 Wagon 4WD FFV,Ford Transit,exacto,Van,"Vans, Passenger Type",Gasoline or E85,Automatic (S10),3.5,16.0,5.95,7.65,6.8
+45087,2022,Ford,Transit T150 Wagon 4WD FFV,Ford Transit,exacto,Van,"Vans, Passenger Type",Gasoline or E85,Automatic (S10),3.5,16.0,5.95,7.65,6.8
+45088,2022,Ford,Transit T150 Wagon 2WD FFV,Ford Transit,exacto,Van,"Vans, Passenger Type",Gasoline or E85,Automatic (S10),3.5,17.0,6.38,8.08,7.23
+43488,2021,Kia,Rio,KIA Rio,exacto,Compacto,Compact Cars,Regular,Automatic (AV-S1),1.6,36.0,14.03,17.43,15.31
+44559,2022,Kia,Rio,KIA Rio,exacto,Compacto,Compact Cars,Regular,Automatic (AV-S1),1.6,36.0,14.03,17.43,15.31
+45652,2023,Kia,Rio,KIA Rio,exacto,Compacto,Compact Cars,Regular,Automatic (AV-S1),1.6,36.0,13.6,17.43,15.31
+43688,2021,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,20.0,7.65,10.2,8.5
+43689,2021,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,19.0,7.23,9.78,8.08
+44458,2022,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,20.0,7.65,10.2,8.5
+44459,2022,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,19.0,7.23,8.93,8.08
+45870,2023,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,20.0,7.65,10.2,8.5
+45874,2023,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,19.0,7.23,8.93,8.08
+46435,2023,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,21.0,7.65,10.2,8.93
+46436,2023,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,20.0,7.65,9.35,8.5
+47249,2024,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,21.0,7.65,10.2,8.93
+47250,2024,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,20.0,7.65,9.35,8.5
+48509,2025,Nissan,Frontier 2WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 2WD,Regular,Automatic (S9),3.8,21.0,8.08,10.2,8.93
+48514,2025,Nissan,Frontier 4WD,Nissan NP300,proxy_epa,Pickup,Standard Pickup Trucks 4WD,Regular,Automatic (S9),3.8,19.0,7.23,8.93,8.08
+43432,2021,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Automatic (variable gear ratios),1.6,35.0,13.6,17.01,14.88
+43433,2021,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Manual 5-spd,1.6,30.0,11.48,14.88,12.75
+44888,2022,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Automatic (variable gear ratios),1.6,35.0,13.6,17.01,14.88
+44889,2022,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Manual 5-spd,1.6,30.0,11.48,14.88,12.75
+46356,2023,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Automatic (variable gear ratios),1.6,35.0,13.6,17.01,14.88
+46357,2023,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Manual 5-spd,1.6,30.0,11.48,14.88,12.75
+47236,2024,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Automatic (variable gear ratios),1.6,35.0,13.6,17.01,14.88
+47237,2024,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Manual 5-spd,1.6,30.0,11.48,14.88,12.75
+48597,2025,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Automatic (variable gear ratios),1.6,35.0,13.6,17.01,14.88
+48598,2025,Nissan,Versa,Nissan Versa,exacto,Compacto,Compact Cars,Regular,Manual 5-spd,1.6,30.0,11.48,14.88,12.75
+43082,2021,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),3.5,21.0,8.08,10.2,8.93
+43083,2021,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),2.7,21.0,8.5,9.78,8.93
+43084,2021,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),3.5,20.0,7.65,9.35,8.5
+43085,2021,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Manual 6-spd,3.5,18.0,7.23,8.93,7.65
+43087,2021,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),2.7,20.0,8.08,9.35,8.5
+44474,2022,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),3.5,21.0,8.08,10.2,8.93
+44475,2022,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),2.7,21.0,8.5,9.78,8.93
+44477,2022,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),3.5,20.0,7.65,9.35,8.5
+44478,2022,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Manual 6-spd,3.5,18.0,7.23,8.93,7.65
+44480,2022,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),2.7,20.0,8.08,9.35,8.5
+45864,2023,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),3.5,21.0,8.08,10.2,8.93
+45865,2023,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S6),2.7,21.0,8.5,9.78,8.93
+45866,2023,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),3.5,20.0,7.65,9.35,8.5
+45867,2023,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Manual 6-spd,3.5,18.0,7.23,8.93,7.65
+45869,2023,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S6),2.7,20.0,8.08,9.35,8.5
+47588,2024,Toyota,Tacoma SR5/Sport/PreRunner 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,22.0,8.5,10.2,9.35
+47589,2024,Toyota,Tacoma SR5/Sport/PreRunner 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,23.0,8.93,11.05,9.78
+47590,2024,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,23.0,8.5,11.05,9.78
+47598,2024,Toyota,Tacoma 4WD MT,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Manual 6-spd,2.4,20.0,7.65,9.78,8.5
+47599,2024,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,9.78,8.93
+47600,2024,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.5,9.78,8.93
+47601,2024,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,10.2,8.93
+47602,2024,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,10.2,8.93
+48870,2025,Toyota,Tacoma SR5/Sport/PreRunner 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,22.0,8.5,10.2,9.35
+48871,2025,Toyota,Tacoma SR5/Sport/PreRunner 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,23.0,8.93,11.05,9.78
+48872,2025,Toyota,Tacoma 2WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 2WD,Regular,Automatic (S8),2.4,23.0,8.5,11.05,9.78
+48877,2025,Toyota,Tacoma 4WD MT,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Manual 6-spd,2.4,20.0,7.65,9.78,8.5
+48878,2025,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,9.78,8.93
+48879,2025,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.5,9.78,8.93
+48880,2025,Toyota,Tacoma SR5/Sport/Off-Road/Limited 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,10.2,8.93
+48881,2025,Toyota,Tacoma 4WD,Toyota Hilux,proxy_epa,Pickup,Small Pickup Trucks 4WD,Regular,Automatic (S8),2.4,21.0,8.08,10.2,8.93
