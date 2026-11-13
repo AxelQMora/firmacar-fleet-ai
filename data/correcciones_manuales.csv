@@ -1,0 +1,2 @@
+id_unidad,correccion,justificacion
+FC-0191,odometro_en_millas,"Odómetro capturado en millas; recorrido (2,344) cae en rango normal en km y la heurística no lo detecta. Corrección confirmada para el corte oct-2026."

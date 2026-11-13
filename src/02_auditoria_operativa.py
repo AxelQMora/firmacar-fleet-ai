@@ -3,7 +3,8 @@
 Lee data/operacion_mensual_sucia.csv y aplica las reglas de CLAUDE.md:
   1. Elimina duplicados exactos (se registran como rechazados con su motivo).
   2. Normaliza clientes, fechas (AAAA-MM-DD) y montos (sin "$" ni comas).
-  3. Detecta odómetros capturados en millas y los convierte a km (* 1.60934).
+  3. Detecta odómetros capturados en millas y los convierte a km (* 1.60934):
+     por heurística o por data/correcciones_manuales.csv (casos confirmados).
   4. Aparta filas con errores críticos en data/rechazados_auditoria.csv.
   5. Calcula métricas financieras -> data/flotilla_auditada_limpia.csv.
 
@@ -26,6 +27,9 @@ RAIZ = Path(__file__).resolve().parent.parent
 ENTRADA = RAIZ / "data" / "operacion_mensual_sucia.csv"
 SALIDA_LIMPIA = RAIZ / "data" / "flotilla_auditada_limpia.csv"
 SALIDA_RECHAZADOS = RAIZ / "data" / "rechazados_auditoria.csv"
+# Correcciones confirmadas por Operaciones para casos que la heurística no detecta.
+CORRECCIONES_CSV = RAIZ / "data" / "correcciones_manuales.csv"
+CORRECCIONES_VALIDAS = {"odometro_en_millas"}
 
 KM_POR_MILLA = Decimal("1.60934")
 RESERVA_POR_KM = Decimal("1.20")
@@ -49,7 +53,8 @@ SIGLAS = {"mx", "sa", "cv"}
 
 COLUMNAS_LIMPIAS = [
     "id_unidad", "cliente", "modelo", "segmento", "fecha_corte",
-    "odometro_inicial_km", "odometro_final_km", "unidad_odometro_corregida", "km_contrato",
+    "odometro_inicial_km", "odometro_final_km", "unidad_odometro_corregida",
+    "metodo_correccion_odometro", "km_contrato",
     "renta_mensual_mxn", "tarifa_km_extra_mxn", "costo_taller_mxn", "dias_taller",
     "seguro_mensual_mxn", "estatus_pago",
     "km_recorridos", "km_excedentes", "cobro_km_excedente_mxn", "ingreso_bruto_mxn",
@@ -122,7 +127,7 @@ def millas_a_km(valor: int) -> int:
 
 
 # --------------------------------------------------------------------------- auditoría por fila
-def auditar_fila(r: dict) -> dict:
+def auditar_fila(r: dict, correcciones: dict[str, str]) -> dict:
     """Devuelve la fila limpia con métricas o lanza ErrorFila con todos los motivos."""
     motivos: list[str] = []
     out: dict = {"id_unidad": r["id_unidad"].strip()}
@@ -165,7 +170,14 @@ def auditar_fila(r: dict) -> dict:
 
     # ---- corrección de millas
     anio_corte = int(out["fecha_corte"][:4])
-    corregida = parece_millas(oi, of, int(m_anio.group(1)), anio_corte, out["segmento"])
+    if correcciones.get(out["id_unidad"]) == "odometro_en_millas":
+        metodo = "manual"
+    elif parece_millas(oi, of, int(m_anio.group(1)), anio_corte, out["segmento"]):
+        metodo = "heuristica"
+    else:
+        metodo = ""
+    corregida = bool(metodo)
+    out["metodo_correccion_odometro"] = metodo
     if corregida:
         oi, of = millas_a_km(oi), millas_a_km(of)
         out["odometro_inicial_km"], out["odometro_final_km"] = oi, of
@@ -205,12 +217,24 @@ def auditar_fila(r: dict) -> dict:
 
 
 # --------------------------------------------------------------------------- main
+def cargar_correcciones() -> dict[str, str]:
+    if not CORRECCIONES_CSV.exists():
+        return {}
+    with CORRECCIONES_CSV.open(newline="", encoding="utf-8") as f:
+        corr = {r["id_unidad"].strip(): r["correccion"].strip() for r in csv.DictReader(f)}
+    invalidas = {k: v for k, v in corr.items() if v not in CORRECCIONES_VALIDAS}
+    if invalidas:
+        raise SystemExit(f"ERROR: correcciones no soportadas en {CORRECCIONES_CSV.name}: {invalidas}")
+    return corr
+
+
 def main() -> int:
     with ENTRADA.open(newline="", encoding="utf-8") as f:
         lector = csv.DictReader(f)
         columnas_origen = list(lector.fieldnames or [])
         filas = list(lector)
     n_entradas = len(filas)
+    correcciones = cargar_correcciones()
 
     limpias: list[dict] = []
     rechazados: list[dict] = []
@@ -228,7 +252,7 @@ def main() -> int:
             continue
         vistos[clave] = linea
         try:
-            limpias.append(auditar_fila(r))
+            limpias.append(auditar_fila(r, correcciones))
         except ErrorFila as e:
             n_criticos += 1
             rechazados.append({**base, "tipo_rechazo": "CRITICO", "motivo_rechazo": str(e)})
@@ -270,7 +294,9 @@ def main() -> int:
     print(f"  Margen global              {utilidad_total / ingreso_total * 100:>15.2f}%")
 
     print("\n=== Detalle ===")
-    print(f"  Odómetros corregidos de millas a km: {sum(x['unidad_odometro_corregida'] for x in limpias)}")
+    print(f"  Odómetros corregidos de millas a km: {sum(x['unidad_odometro_corregida'] for x in limpias)}"
+          f"  (heurística={sum(x['metodo_correccion_odometro'] == 'heuristica' for x in limpias)}, "
+          f"manual={sum(x['metodo_correccion_odometro'] == 'manual' for x in limpias)})")
     for b in ("RENTABLE", "ALERTA_TALLER", "CRITICA_PERDIDA"):
         print(f"  {b:<16} {sum(x['bandera_alerta'] == b for x in limpias)}")
     print(f"\nArchivos: {SALIDA_LIMPIA.relative_to(RAIZ)}, {SALIDA_RECHAZADOS.relative_to(RAIZ)}")
